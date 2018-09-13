@@ -1,0 +1,21 @@
+body{
+    background: url(../images/background.jpg);
+}
+
+h1{
+    color: red;
+    font-size: 100px;
+    font-family: 'Macondo Swash Caps', cursive;
+}
+
+h2{
+    color: white;
+    font-size: 50px;
+    font-family: 'Macondo Swash Caps', cursive;
+}
+
+span{
+    color: white;
+    font-size: 20px;
+    font-family: 'Romanesco', cursive;
+}
