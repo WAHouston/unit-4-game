@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
     background: url(../images/background.jpg);
 }
@@ -15,7 +19,26 @@ h2{
 }
 
 span{
+    display: block;
     color: white;
     font-size: 20px;
     font-family: 'Romanesco', cursive;
+    text-align: center;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+.char {
+    width: 200px;
+    padding: 10px 20px 10px 20px;
+    background-color: #9f9f9f99;
+    float: left;
+    border: 1px solid black;
+}
+
+.clear {
+    overflow: auto;
 }
