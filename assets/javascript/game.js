@@ -1,0 +1,12 @@
+var jcHp = 120
+var hdHp = 150
+var hpHp = 100
+var dsHp = 180
+var jcPow = 
+var hdPow = 
+var hpPow = 
+var dsPow = 
+var jcCounter = 
+var hdCounter = 
+var hpCounter = 
+var dsCounter = 25
