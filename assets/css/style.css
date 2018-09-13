@@ -4,6 +4,7 @@
 
 body{
     background: url(../images/background.jpg);
+    margin-left: 10px;
 }
 
 h1{
@@ -16,15 +17,17 @@ h2{
     color: white;
     font-size: 50px;
     font-family: 'Macondo Swash Caps', cursive;
+    margin: 10px 0px 10px 0px;
 }
 
 span{
     display: block;
     color: white;
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'Romanesco', cursive;
     text-align: center;
     width: 100%;
+    margin: 0px 0px 10px 0px;
 }
 
 img {
@@ -34,11 +37,22 @@ img {
 .char {
     width: 200px;
     padding: 10px 20px 10px 20px;
-    background-color: #9f9f9f99;
     float: left;
     border: 1px solid black;
 }
 
 .clear {
     overflow: auto;
+}
+
+.neutral {
+    background-color: #9f9f9f99;
+}
+
+.chosen {
+    background-color: #0055ff99;
+}
+
+.enemy {
+    background-color: #ff000099;
 }
