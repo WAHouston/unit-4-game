@@ -41,3 +41,11 @@ var choices = $(".char").click(function() {
     }
 })
 
+var reset = $("#restart").click(function() {
+    $("#select").append($(".char"))
+    $(".char").addClass("neutral").removeClass("chosen").removeClass("enemy")
+})
+
+var attack = $("#attack").click(function() {
+
+})
