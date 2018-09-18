@@ -57,3 +57,11 @@ img {
 .enemy {
     background-color: #ff000099;
 }
+
+p {
+    color: white;
+    font-size: 25px;
+    font-family: 'Romanesco', cursive;
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+}

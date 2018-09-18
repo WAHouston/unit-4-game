@@ -43,12 +43,13 @@ var statReset = function(char){
 }
 
 var reset = function() {
-    $("#select").append($(".char"))
+    for (var i = 0; i < charArray.length; i++){
+        $("#select").append(charArray[i].disHp.parent())
+        statReset(charArray[i])
+    }
     $(".char").addClass("neutral").removeClass("chosen").removeClass("enemy")
-    statReset(constantine)
-    statReset(dresden)
-    statReset(potter)
-    statReset(strange)
+    $("#action").html("<p></p>")
+
 }
 
 $(".char").click(function() {
@@ -74,10 +75,17 @@ $("#attack").click(function() {
             }
         }
         enemy.hp = enemy.hp - player.pow
-        player.pow = player.pow + player.basePow
-        player.hp = player.hp - enemy.counter
+        if (enemy.hp >= 1){
+            player.hp = player.hp - enemy.counter
+            $("#action").html("<p>You attacked " + $(enemy.disHp.parent().children()[0]).text() + " for " + player.pow + " damage." + "</p>")
+            $("#action").append("<p>" + $(enemy.disHp.parent().children()[0]).text() + " attacked you for " + enemy.counter + " damage." + "</p>")
+        } else {
+            $(enemy.disHp.parent()).detach()
+            $("#action").html("<p>You defeated " + $(enemy.disHp.parent().children()[0]).text() + ".  Choose another opponent.</p>")
+        }
         enemy.disHp.text(enemy.hp)
         player.disHp.text(player.hp)
+        player.pow = player.pow + player.basePow
     }
 })
 
