@@ -3,7 +3,8 @@ var constantine = {
     basePow: 1,
     hp: 10,
     pow: 1,
-    counter: 1
+    counter: 1,
+    disHp: $("#jchp")
 }
 
 var dresden = {
@@ -11,7 +12,8 @@ var dresden = {
     basePow: 1,
     hp: 10,
     pow: 1,
-    counter: 1
+    counter: 1,
+    disHp: $("#hdhp")
 }
 
 var potter = {
@@ -19,7 +21,8 @@ var potter = {
     basePow: 1,
     hp: 10,
     pow: 1,
-    counter: 1
+    counter: 1,
+    disHp: $("#hphp")
 }
 
 var strange = {
@@ -27,10 +30,26 @@ var strange = {
     basePow: 1,
     hp: 10,
     pow: 1,
-    counter: 1
+    counter: 1,
+    disHp: $("#dshp")
 }
 
-var choices = $(".char").click(function() {
+var statReset = function(char){
+    char.hp = char.baseHp
+    char.pow = char.basePow
+    char.disHp.text(char.hp)
+}
+
+var reset = function() {
+    $("#select").append($(".char"))
+    $(".char").addClass("neutral").removeClass("chosen").removeClass("enemy")
+    statReset(constantine)
+    statReset(dresden)
+    statReset(potter)
+    statReset(strange)
+}
+
+$(".char").click(function() {
     if ($(event.currentTarget).parent()[0] === $("#select")[0]) {
         $(event.currentTarget).addClass("chosen").removeClass("neutral")
         $("#yourchar").append(event.currentTarget)
@@ -41,11 +60,10 @@ var choices = $(".char").click(function() {
     }
 })
 
-var reset = $("#restart").click(function() {
-    $("#select").append($(".char"))
-    $(".char").addClass("neutral").removeClass("chosen").removeClass("enemy")
-})
-
-var attack = $("#attack").click(function() {
+$("#attack").click(function() {
 
 })
+
+$("#restart").click(reset)
+
+reset()
