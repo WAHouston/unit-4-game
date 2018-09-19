@@ -1,36 +1,36 @@
 var constantine = {
     baseHp: 100,
-    basePow: 1,
-    hp: 10,
-    pow: 1,
-    counter: 1,
+    basePow: 16,
+    hp: 100,
+    pow: 16,
+    counter: 5,
     disHp: $("#jchp")
 }
 
 var dresden = {
-    baseHp: 190,
-    basePow: 1,
-    hp: 10,
-    pow: 1,
-    counter: 1,
+    baseHp: 150,
+    basePow: 6,
+    hp: 150,
+    pow: 6,
+    counter: 20,
     disHp: $("#hdhp")
 }
 
 var potter = {
     baseHp: 120,
-    basePow: 1,
-    hp: 10,
-    pow: 1,
-    counter: 1,
+    basePow: 8,
+    hp: 120,
+    pow: 8,
+    counter: 10,
     disHp: $("#hphp")
 }
 
 var strange = {
-    baseHp: 1000,
-    basePow: 1,
-    hp: 10,
-    pow: 1,
-    counter: 1,
+    baseHp: 180,
+    basePow: 4,
+    hp: 180,
+    pow: 4,
+    counter: 25,
     disHp: $("#dshp")
 }
 
@@ -82,6 +82,10 @@ $("#attack").click(function() {
         } else {
             $(enemy.disHp.parent()).detach()
             $("#action").html("<p>You defeated " + $(enemy.disHp.parent().children()[0]).text() + ".  Choose another opponent.</p>")
+        }
+        if (player.hp < 1){
+            $(player.disHp.parent()).detach()
+            $("#action").html("<p>You were defeated. GAME OVER")
         }
         enemy.disHp.text(enemy.hp)
         player.disHp.text(player.hp)
